@@ -95,13 +95,4 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
-
-  config.before(:suite) do
-        PRICING_TABLE = {
-          milk: { unit_price: 3.97, sale_price: {quantity: 2, value: 5}},
-          bread: { unit_price: 2.17, sale_price: {quantity: 3, value: 6}},
-          banana: { unit_price: 0.99, sale_price: {}},
-          apple: { unit_price: 0.89, sale_price: {}}
-        }
-  end
 end
