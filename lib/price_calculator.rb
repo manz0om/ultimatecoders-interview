@@ -7,7 +7,7 @@ class PriceCalculator
     item = item.to_sym 
     price = 0.0
     net_price = 0.0
-    unless PRICING_TABLE[item].empty?
+    if PRICING_TABLE.key?(item)
       unless PRICING_TABLE[item][:sale_price].empty?
         sale_quantity = PRICING_TABLE[item][:sale_price][:quantity]
         sale_price = PRICING_TABLE[item][:sale_price][:value]
