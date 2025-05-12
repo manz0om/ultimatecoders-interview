@@ -31,16 +31,16 @@ class Receipt
     return receipt
   end
 
-  def print(receipt)
-    header = "Item"+ " "*12 + "Quantity" + " "*12 + "Price"
-    divider = "-" * 45
+  def print_receipt(receipt)
+    header = 'Item'+ ' '*12 + 'Quantity' + ' '*12 + 'Price'
+    divider = '-' * 45
     puts header
     puts divider
     receipt.each do |row|
-      r = row[:item]+ " "*12 + row[:quantity]+ " "*12 + "$"+row[:price]
+      r = row[:item]+ ' '*(20-row[:item].size) + row[:quantity].to_s+ ' '*(20-row[:quantity].size) + '$'+row[:price].to_s
       puts r
     end
-    puts ""
+    puts ''
     puts "Total price : $#{@total_price}"
     puts "You saved $#{@amount_saved} today"
   end
